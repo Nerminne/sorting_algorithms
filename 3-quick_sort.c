@@ -64,9 +64,9 @@ void quick_recursion(int *array, size_t lower, size_t higher, size_t size)
 	if (lower < higher)
 	{
 		index = partition(array, lower, higher, size);
-		if (index != 0)
+		if (index > 0)
 			quick_recursion(array, lower, index - 1, size);
-		if (index != size - 1)	
+		if (index < size - 1)	
 			quick_recursion(array, index + 1, higher, size);
 	}
 }
