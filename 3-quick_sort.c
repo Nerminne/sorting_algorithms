@@ -23,7 +23,7 @@ void swap(int *val_index1, int *val_index2)
  */
 int partition(int *array, size_t lower, size_t higher, size_t size)
 {
-	int pivot = array[higher];
+	int pivot = array[lower];
 	size_t start = lower, end = higher;
 
 	while (start < end)
@@ -64,9 +64,7 @@ void quick_recursion(int *array, size_t lower, size_t higher, size_t size)
 	if (lower < higher)
 	{
 		index = partition(array, lower, higher, size);
-		if (index > 0)
-			quick_recursion(array, lower, index - 1, size);
-		if (index < size - 1)	
-			quick_recursion(array, index + 1, higher, size);
+		quick_recursion(array, lower, index - 1, size);
+		quick_recursion(array, index + 1, higher, size);
 	}
 }
