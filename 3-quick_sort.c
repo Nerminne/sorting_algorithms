@@ -23,21 +23,20 @@ void swap(int *val_index1, int *val_index2)
  */
 int partition(int *array, size_t lower, size_t higher, size_t size)
 {
-	int pivot = array[lower];
-	size_t start = lower, end = higher;
+	int pivot = array[higher];
+	size_t x, y = lower;
 
-	while (start < end)
+	for (x = lower; x < higher; x++)
 	{
-		while (array[start] <= pivot)
-			start++;
-		while (array[end] > pivot)
-			end--;
-		if (start < end)
-			swap(&array[start], &array[end]);
+		if (array[x] <= pivot)
+		{
+			swap(&array[x], &array[y]);
+			y++;
+		}
 	}
-	swap(&array[lower], &array[end]);
+	swap(&array[y], &array[higher]);
 	print_array(array, size);
-	return (end);
+	return (y);
 }
 /**
  * quick_sort - function that sorts an array using the Quick sort algorithm
@@ -64,7 +63,9 @@ void quick_recursion(int *array, size_t lower, size_t higher, size_t size)
 	if (lower < higher)
 	{
 		index = partition(array, lower, higher, size);
-		quick_recursion(array, lower, index - 1, size);
-		quick_recursion(array, index + 1, higher, size);
+		if (index > 0)
+			quick_recursion(array, lower, index - 1, size);
+		if (index < size - 1)
+			quick_recursion(array, index + 1, higher, size);
 	}
 }
