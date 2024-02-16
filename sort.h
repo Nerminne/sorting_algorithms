@@ -48,5 +48,6 @@ void PrintArray(int *array, int iBeg, int iEnd);
 void CopyArray(int *array, int iBeg, int iEnd, int *work_copy);
 void TopDownMerge(int *array, int iBeg, int iMid, int iEnd, int *work_copy);
 void TopDownSplitMerge(int *work_copy, int iBeg, int iEnd, int *array);
+void merge_sort(int *array, size_t size);
 
 #endif
