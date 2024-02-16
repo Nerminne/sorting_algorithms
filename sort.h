@@ -18,6 +18,18 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * enum bool_e - manual definition of booleans, in case C99 stdbool.h not
+ * available
+ * @false: logical 0
+ * @true: logical 1
+ */
+typedef enum bool_e
+{
+	false = 0,
+	true
+} bool;
+
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
