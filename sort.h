@@ -54,5 +54,10 @@ int iLeftChild(int i);
 void ConvertToHeap(int *array, size_t size);
 void SiftDown(int *array, size_t size, int start, int end);
 void heap_sort(int *array, size_t size);
+void init_bucket_count(int *bucket_count);
+void build_buckets(int *bucket_count, int **buckets);
+int find_max(int *array, size_t size);
+void into_array(int *array, size_t size, int **buckets, int *bucket_count);
+void radix_sort(int *array, size_t size);
 
 #endif
