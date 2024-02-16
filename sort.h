@@ -28,4 +28,8 @@ void quick_recursion(int *array, size_t lower, size_t higher, size_t size);
 void quick_sort(int *array, size_t size);
 int partition(int *array, size_t lower, size_t higher, size_t size);
 void swap(int *val_index1, int *val_index2);
+void shell_sort(int *array, size_t size);
+void dll_adj_swap(listint_t **list, listint_t *left, listint_t *right);
+void cocktail_sort_list(listint_t **list);
+
 #endif
